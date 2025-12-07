@@ -270,6 +270,26 @@ Features that prove stable may be submitted as PRs to upstream slskd. Our auto-r
 - [Soulseek.NET](https://github.com/jpdillingham/Soulseek.NET) - The .NET Soulseek library
 - The Soulseek community
 
+## Use of AI in This Project
+
+This project was built in partnership with tools, not replacements for people. Throughout its development, we made deliberate use of AI-powered assistants—most notably [Cursor](https://cursor.sh) and several leading large language models—as part of the day-to-day engineering workflow.
+
+**These systems helped in three main ways:**
+
+| Area | How AI Assisted |
+|------|-----------------|
+| **Research & Exploration** | Quickly surfacing prior art, sketching out alternative designs, and pressure-testing edge cases that would have taken much longer to explore alone. |
+| **Automation & Busywork** | Generating initial scaffolding, refactoring repetitive patterns, and handling mechanical changes that are important but rarely insightful. |
+| **Thinking Partner** | Serving as a second pair of eyes on tricky problems, helping articulate trade-offs, and translating rough ideas into shapes that could be implemented and tested. |
+
+**What these tools did not do is replace responsibility.** Every behavior that matters—protocol decisions, data flows, failure modes, and user-visible effects—was reviewed, edited, or rewritten by a human before it landed in this repository. The models accelerated the work and helped make the project possible at this scope, but accountability for the result sits squarely with the maintainer.
+
+If you're reading this code, you should assume that:
+- ✅ AI tools were used as collaborators in research, drafting, and mechanical edits
+- ✅ The final form of the project reflects human judgment, testing, and ongoing maintenance
+
+> **In other words: this is an AI-assisted project, not an AI-generated one.**
+
 </small>
 
 <p align="center"><strong>slskdn</strong> — For users who'd rather download music than learn Python.</p>
