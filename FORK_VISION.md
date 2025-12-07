@@ -2,7 +2,7 @@
 
 ⚡ Positioning Statement for slskdn Enhancements
 
-slskdn is a forward-leaning Soulseek client that remains firmly grounded in the spirit and structure of the original network. We believe in preserving Soulseek’s unique one-to-one sharing culture, human-scale interaction, and community-driven ethos — while offering opt-in tools for those who want more speed, flexibility, or experimentation.
+slskdn is a forward-leaning Soulseek client that remains firmly grounded in the spirit and structure of the original network and client. We believe in preserving Soulseek’s unique one-to-one sharing culture, human-scale interaction, and community-driven ethos — while offering opt-in tools for those who want more speed, flexibility, or experimentation.
 
 Our approach to both application and protocol extension is additive, not disruptive. We aim to enhance Soulseek with optional features like multipart downloads, improved reliability, and smarter client coordination, without breaking compatibility with existing clients or infringing on the core protocol. Where possible, we will reuse existing behaviors and extend them gracefully so that legacy clients continue to operate unchanged, and enhanced clients can interoperate seamlessly.
 
