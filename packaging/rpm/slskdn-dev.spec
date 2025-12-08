@@ -1,11 +1,11 @@
-Name:           slskdn
-Version:        0.24.1.slskdn.7
+Name:           slskdn-dev
+Version:        0.24.1.dev.202412080000
 Release:        1%{?dist}
-Summary:        🔋 The batteries-included fork of slskd
+Summary:        🔋 DEV: The batteries included, EXPERIMENTAL fork of slskd
 
 License:        AGPL-3.0-or-later
-URL:            https://github.com/snapetech/slskdn
-Source0:        slskdN-%{version}-linux-x64.zip
+URL:            https://github.com/snapetech/slskdn/tree/experimental/multi-source-swarm
+Source0:        slskdn-dev-linux-x64.zip
 Source1:        slskd.service
 Source2:        slskd.yml
 Source3:        slskd.conf
@@ -13,32 +13,48 @@ Source3:        slskd.conf
 BuildArch:      x86_64
 BuildRequires:  systemd-rpm-macros
 BuildRequires:  unzip
-# Required for user creation in %pre
 Requires(pre):  shadow-utils
 Requires:       systemd
 Provides:       slskd
+Provides:       slskdn
 
 # Disable debuginfo - this is a pre-built .NET binary
 %global debug_package %{nil}
 %define __strip /bin/true
 Conflicts:      slskd
+Conflicts:      slskdn
 Obsoletes:      slskd < %{version}
 
 %description
-The batteries-included fork of slskd. Feature-rich,
-including wishlist, smart ranking, tabbed browsing, notifications,
-and more. Modern web UI for the Soulseek file sharing network.
+🧪 DEVELOPMENT BUILD - Tracks experimental/multi-source-swarm branch
 
-Features include:
+The batteries included, **EXPERIMENTAL** fork of slskd. Feature-rich,
+including cutting-edge experimental features:
+
+Multi-Source Downloads (Swarm Mode):
+- Download files from multiple peers simultaneously
+- Content-verified chunked transfers
+- Dynamic peer speed ranking with automatic failover
+- Speculative execution for fast chunk completion
+
+DHT Mesh Network:
+- Distributed hash table for FLAC content verification
+- Gossip-based mesh synchronization between slskdn clients
+- BitTorrent DHT rendezvous for peer discovery
+- TLS-secured overlay connections
+
+Hash Database:
+- Local SQLite database of verified FLAC hashes
+- Automatic backfill from non-DHT peers
+- Mesh sync with sequence-based delta updates
+
+Plus all stable slskdn features:
 - Wishlist with auto-download
-- Smart source ranking based on speed, queue, and history
-- Tabbed user browsing with persistent sessions
-- Multi-select folder downloads with checkboxes
-- Configurable search page size
-- Max file size filter
-- Delete files on disk when removing downloads
-- Push notifications (Pushbullet, Ntfy, Pushover)
-- PWA support for mobile
+- Smart source ranking
+- Tabbed user browsing
+- Push notifications
+
+⚠️  This is a development build and may contain bugs!
 
 %prep
 %setup -q -c
@@ -74,7 +90,12 @@ getent passwd slskd >/dev/null || useradd -r -s /sbin/nologin -d %{_sharedstated
 %post
 %systemd_post slskd.service
 echo ""
-echo "🔋 slskdN has been installed!"
+echo "🧪 slskdn-dev has been installed!"
+echo ""
+echo "⚠️  This is a DEVELOPMENT build with experimental features:"
+echo "   - Multi-source swarm downloads"
+echo "   - DHT mesh network"
+echo "   - Content hash verification"
 echo ""
 echo "1. Edit the configuration:"
 echo "   sudo nano /etc/slskd/slskd.yml"
@@ -84,6 +105,8 @@ echo "   sudo systemctl enable --now slskd"
 echo ""
 echo "3. Access the web UI at:"
 echo "   http://localhost:5030"
+echo ""
+echo "Report issues: https://github.com/snapetech/slskdn/issues"
 echo ""
 
 %preun
@@ -104,9 +127,12 @@ echo ""
 %dir %attr(755,slskd,slskd) %{_sharedstatedir}/slskd/incomplete
 
 %changelog
-* Sat Dec 06 2025 snapetech <slskdN@proton.me> - 0.24.1.slskdN.7-1
-- Fix race condition in SourceRankingService
-- Update branding
+* Sun Dec 08 2024 snapetech <slskdn@proton.me> - 0.24.1.dev.202412080000-1
+- Initial dev release from experimental/multi-source-swarm
+- Multi-source swarm downloads with content verification
+- DHT mesh network for peer discovery
+- BitTorrent DHT rendezvous layer
+- Overlay protocol with TLS security
+- Hash database with mesh sync
+- Phase 6.5 enhancements (NAT detection, peer verification, etc.)
 
-* Fri Dec 05 2025 snapetech <slskdN@proton.me> - 0.24.1.slskdN.6-1
-- Initial slskdN release
