@@ -8,7 +8,7 @@ OSX_ARM64_SHA=$5
 
 cat > flake.nix <<FLAKE
 {
-  description = "Batteries-included Soulseek web client";
+  description = "🔋 The batteries-included fork of slskd. Feature-rich, including wishlist, smart ranking, tabbed browsing, notifications & more";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

@@ -41,7 +41,7 @@ PackageName: slskdn
 PackageUrl: https://github.com/snapetech/slskdn
 License: AGPL-3.0-or-later
 LicenseUrl: https://github.com/snapetech/slskdn/blob/master/LICENSE
-ShortDescription: Batteries-included Soulseek web client
+ShortDescription: 🔋 The batteries-included fork of slskd. Feature-rich, including wishlist, smart ranking, tabbed browsing, notifications & more
 Tags:
   - soulseek
   - p2p

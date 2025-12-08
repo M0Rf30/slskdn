@@ -9,8 +9,8 @@
     <licenseUrl>https://github.com/snapetech/slskdn/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>slskdn soulseek p2p file-sharing music</tags>
-    <summary>Batteries-included Soulseek web client</summary>
-    <description>An experimental fork of slskd exploring advanced download features, protocol extensions, and network enhancements for Soulseek.</description>
+    <summary>🔋 The batteries-included fork of slskd. Feature-rich, including wishlist, smart ranking, tabbed browsing, notifications &amp; more</summary>
+    <description>🔋 The batteries-included fork of slskd. Feature-rich, including wishlist, smart ranking, tabbed browsing, notifications &amp; more</description>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

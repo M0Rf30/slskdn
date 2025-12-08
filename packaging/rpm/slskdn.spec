@@ -1,7 +1,7 @@
 Name:           slskdn
 Version:        0.24.1.slskdn.7
 Release:        1%{?dist}
-Summary:        🔋 The batteries-included fork of slskd
+Summary:        🔋 The batteries-included fork of slskd. Feature-rich, including wishlist, smart ranking, tabbed browsing, notifications & more
 
 License:        AGPL-3.0-or-later
 URL:            https://github.com/snapetech/slskdn
