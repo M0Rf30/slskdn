@@ -13,6 +13,7 @@ import LoginForm from './LoginForm';
 import Rooms from './Rooms/Rooms';
 import Searches from './Search/Searches';
 import ErrorSegment from './Shared/ErrorSegment';
+import Footer from './Shared/Footer';
 import System from './System/System';
 import Transfers from './Transfers/Transfers';
 import Users from './Users/Users';
@@ -299,39 +300,48 @@ class App extends Component {
 
     if (!initialized) {
       return (
-        <Loader
-          active
-          size="big"
-        />
+        <>
+          <Loader
+            active
+            size="big"
+          />
+          <Footer />
+        </>
       );
     }
 
     if (error) {
       return (
-        <ErrorSegment
-          caption={
-            <>
-              <span>Lost connection to slskd</span>
-              <br />
-              <span>
-                {retriesExhausted ? 'Refresh to reconnect' : 'Retrying...'}
-              </span>
-            </>
-          }
-          icon="attention"
-          suppressPrefix
-        />
+        <>
+          <ErrorSegment
+            caption={
+              <>
+                <span>Lost connection to slskd</span>
+                <br />
+                <span>
+                  {retriesExhausted ? 'Refresh to reconnect' : 'Retrying...'}
+                </span>
+              </>
+            }
+            icon="attention"
+            suppressPrefix
+          />
+          <Footer />
+        </>
       );
     }
 
     if (!session.isLoggedIn() && !isPassthroughEnabled()) {
       return (
-        <LoginForm
-          error={login.error}
-          initialized={login.initialized}
-          loading={login.pending}
-          onLoginAttempt={this.handleLogin}
-        />
+        <>
+          <LoginForm
+            error={login.error}
+            initialized={login.initialized}
+            loading={login.pending}
+            onLoginAttempt={this.handleLogin}
+          />
+          <Footer />
+        </>
       );
     }
 
@@ -668,6 +678,7 @@ class App extends Component {
           position="bottom-center"
           rtl={false}
         />
+        <Footer />
       </>
     );
   }
