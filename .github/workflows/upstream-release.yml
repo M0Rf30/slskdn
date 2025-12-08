@@ -37,7 +37,7 @@ jobs:
           # Get our current base version (from latest release tag)
           OUR_LATEST=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0-slskdN.0")
           # Extract base version (e.g., 0.24.1 from 0.24.1-slskdN.5)
-          CURRENT_BASE=$(echo "$OUR_LATEST" | sed 's/-slskdN.*//')
+          CURRENT_BASE=$(echo "$OUR_LATEST" | sed 's/-slskdn.*//')
           echo "Our current base: $CURRENT_BASE"
           echo "current_base=${CURRENT_BASE}" >> $GITHUB_OUTPUT
           
@@ -125,7 +125,7 @@ jobs:
         if: steps.merge.outputs.merge_success == 'true'
         run: |
           NEW_VERSION="${{ needs.check-upstream-release.outputs.new_version }}"
-          PKGVER=$(echo "$NEW_VERSION" | sed 's/-slskdN/.slskdN/')
+          PKGVER=$(echo "$NEW_VERSION" | sed 's/-slskdn/.slskdn/')
           
           # Update PKGBUILD-bin
           sed -i "s/^pkgver=.*/pkgver=${PKGVER}/" packaging/aur/PKGBUILD-bin

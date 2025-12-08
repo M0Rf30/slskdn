@@ -27,7 +27,7 @@ jobs:
             TAG="${{ github.ref_name }}"
           fi
           echo "tag=$TAG" >> $GITHUB_OUTPUT
-          VERSION=$(echo "$TAG" | sed 's/-slskdN/.slskdN/')
+          VERSION=$(echo "$TAG" | sed 's/-slskdn/.slskdn/')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Setup .NET
