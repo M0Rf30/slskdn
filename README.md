@@ -17,6 +17,11 @@
   <a href="https://aur.archlinux.org/packages/slskdn-bin"><img src="https://img.shields.io/aur/version/slskdn-bin?logo=archlinux&label=AUR" alt="AUR"></a>
   <a href="https://copr.fedorainfracloud.org/coprs/slskdn/slskdn/"><img src="https://img.shields.io/badge/copr-slskdn%2Fslskdn-51A2DA?logo=fedora" alt="COPR"></a>
   <a href="https://launchpad.net/~keefshape/+archive/ubuntu/slskdn"><img src="https://img.shields.io/badge/ppa-keefshape%2Fslskdn-E95420?logo=ubuntu" alt="PPA"></a>
+  <a href="https://github.com/snapetech/homebrew-slskdn"><img src="https://img.shields.io/badge/homebrew-slskdn-blue?logo=homebrew" alt="Homebrew"></a>
+  <a href="https://search.nixos.org/packages?channel=unstable&query=slskdn"><img src="https://img.shields.io/badge/nix-flake-5277C3?logo=nixos" alt="Nix"></a>
+  <a href="https://snapcraft.io/slskdn"><img src="https://img.shields.io/badge/snap-slskdn-E95420?logo=snapcraft" alt="Snap"></a>
+  <a href="https://community.chocolatey.org/packages/slskdn"><img src="https://img.shields.io/chocolatey/v/slskdn?label=choco" alt="Chocolatey"></a>
+  <a href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/s/snapetech/slskdn"><img src="https://img.shields.io/badge/winget-slskdn-00D1F1?logo=windows" alt="Winget"></a>
   <img src="https://img.shields.io/badge/base-slskd%200.24.1-purple" alt="Based on slskd">
   <a href="https://github.com/snapetech/slskdn/blob/master/LICENSE"><img src="https://img.shields.io/github/license/snapetech/slskdn" alt="License"></a>
   <a href="https://discord.gg/NRzj8xycQZ"><img src="https://img.shields.io/badge/Discord-Join%20Chat-5865F2?logo=discord&logoColor=white" alt="Discord"></a>
@@ -167,7 +172,26 @@ Install the pre-built binary:
 brew tap snapetech/slskdn
 brew install slskdn
 ```
-(Once the tap is set up)
+
+### Nix (Flake)
+```bash
+nix profile install github:snapetech/slskdn
+```
+
+### Snap (Linux)
+```bash
+sudo snap install slskdn
+```
+
+### Windows (Winget)
+```powershell
+winget install snapetech.slskdn
+```
+
+### Windows (Chocolatey)
+```powershell
+choco install slskdn
+```
 
 ### With Docker
 ```bash
