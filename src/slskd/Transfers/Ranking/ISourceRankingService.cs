@@ -1,5 +1,5 @@
-// <copyright file="ISourceRankingService.cs" company="slskd Team">
-//     Copyright (c) slskd Team. All rights reserved.
+// <copyright file="ISourceRankingService.cs" company="slskdN">
+//     Copyright (c) slskdN. All rights reserved.
 //     Licensed under the GNU Affero General Public License v3.0.
 // </copyright>
 
