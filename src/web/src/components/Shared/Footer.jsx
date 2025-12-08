@@ -1,32 +1,39 @@
+import './Footer.css';
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
-import './Footer.css';
 
 const Footer = () => {
   const year = new Date().getFullYear();
-  
+
   return (
     <footer className="slskdn-footer">
       <div className="slskdn-footer-content">
         <span className="slskdn-footer-copyright">
-          © {year} <a href="https://github.com/snapetech/slskdn" target="_blank" rel="noopener noreferrer">slskdn</a>
+          © {year}{' '}
+          <a
+            href="https://github.com/snapetech/slskdn"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            slskdn
+          </a>
         </span>
         <span className="slskdn-footer-divider">•</span>
-        <a 
+        <a
           className="slskdn-footer-link"
-          href="https://github.com/snapetech/slskdn" 
-          target="_blank" 
+          href="https://github.com/snapetech/slskdn"
           rel="noopener noreferrer"
+          target="_blank"
           title="GitHub"
         >
           <Icon name="github" /> GitHub
         </a>
         <span className="slskdn-footer-divider">•</span>
-        <a 
+        <a
           className="slskdn-footer-link"
-          href="https://discord.gg/NRzj8xycQZ" 
-          target="_blank" 
+          href="https://discord.gg/NRzj8xycQZ"
           rel="noopener noreferrer"
+          target="_blank"
           title="Discord"
         >
           <Icon name="discord" /> Discord
@@ -41,4 +48,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
