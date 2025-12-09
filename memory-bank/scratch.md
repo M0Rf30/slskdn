@@ -78,6 +78,45 @@ cd src/web && npm run lint
 dotnet restore --verbosity detailed
 ```
 
+## GitHub CLI (gh) Commands
+
+**USE THESE instead of browser for CI/CD debugging!**
+
+```bash
+# List recent workflow runs
+gh run list --limit 10
+
+# View failed run logs (MOST USEFUL)
+gh run view <run-id> --log-failed
+
+# View full logs for a run
+gh run view <run-id> --log
+
+# Watch a running workflow
+gh run watch <run-id>
+
+# Re-run a failed workflow
+gh run rerun <run-id>
+
+# List workflows
+gh workflow list
+
+# View workflow runs for specific workflow
+gh run list --workflow=ci.yml
+
+# Download artifacts from a run
+gh run download <run-id>
+
+# View PR checks
+gh pr checks
+
+# Create PR
+gh pr create --title "Title" --body "Description"
+
+# View repo in browser (when you really need it)
+gh repo view --web
+```
+
 ---
 
 ## File Locations Cheat Sheet
