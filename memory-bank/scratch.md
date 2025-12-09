@@ -117,6 +117,60 @@ gh pr create --title "Title" --body "Description"
 gh repo view --web
 ```
 
+## CLI Efficiency Rules
+
+**Prefer piping, nesting, and chaining over sequential commands.**
+
+```bash
+# GOOD: Chained with && (stops on failure)
+dotnet build && dotnet test && ./bin/lint
+
+# GOOD: Piped (single process chain)
+gh run list --limit 5 | grep -i fail | head -3
+
+# GOOD: Subshell for grouping
+(cd src/web && npm install && npm run build)
+
+# GOOD: Loop in single line
+for f in *.cs; do grep -l "TODO" "$f"; done | xargs -I{} echo "Fix: {}"
+
+# GOOD: Parallel with &
+dotnet build & npm --prefix src/web run build & wait
+
+# BAD: Sequential separate commands (leaves resources hanging)
+dotnet build
+dotnet test
+./bin/lint
+
+# BAD: Multiple greps when one suffices
+grep "error" file.log
+grep "warning" file.log
+# GOOD: Single grep with alternation
+grep -E "error|warning" file.log
+```
+
+### Efficient Patterns
+
+```bash
+# Find and act in one command
+find src -name "*.cs" -exec grep -l "TODO" {} \;
+
+# Conditional execution
+[ -f package.json ] && npm install
+
+# Multiple git operations
+git add -A && git commit -m "msg" && git push
+
+# Check multiple things at once
+python3 -c "import yaml; [yaml.safe_load(open(f)) for f in ['a.yml','b.yml']]"
+
+# Validate YAML files in directory
+for f in .github/workflows/*.yml; do python3 -c "import yaml; yaml.safe_load(open('$f'))" && echo "$f OK"; done
+
+# Propagate to multiple branches efficiently
+for b in dev experimental/multi-source-swarm; do git checkout "$b" && git cherry-pick abc123; done && git checkout master
+```
+
 ---
 
 ## File Locations Cheat Sheet
